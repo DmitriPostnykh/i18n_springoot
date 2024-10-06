@@ -1,0 +1,20 @@
+<!-- menu.html -->
+<nav th:fragment="navigation">
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About Me</a></li>
+        <li><a href="/services">Services</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="about?lang=en">English</a></li>
+        <li><a href="about?lang=ru">Русский</a></li>
+    </ul>
+</nav>
+
+<script>
+    function setLanguage(lang) {
+        const currentUrl = window.location.href;
+        const url = new URL(currentUrl);
+        url.searchParams.set('lang', lang);
+        window.location.href = url.toString();
+    }
+</script>
